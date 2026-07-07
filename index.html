@@ -86,15 +86,39 @@
     }
 
     /* CARD WRAPPER */
+    #stage {
+      position: relative;
+      margin: 0 auto;
+    }
+
     .card {
       width: 1080px;
       height: 900px;
       border-radius: 24px;
       overflow: hidden;
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       display: none;
       flex-shrink: 0;
+      transform-origin: top left;
       box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 8px;
+        gap: 30px;
+      }
+
+      .nav button {
+        font-size: 10px;
+        padding: 4px 9px;
+      }
+
+      .nav-title {
+        font-size: 11px;
+      }
     }
 
     .card.active {
@@ -1073,7 +1097,6 @@
 <body>
 
   <div class="nav">
-    <!-- <span class="nav-title">📊 FM LINKEDIN CARDS</span> -->
     <button class="active" onclick="show(1,this)">🌐 Markets</button>
     <button onclick="show(2,this)">💸 Money Flow</button>
     <button onclick="show(3,this)">👥 Players</button>
@@ -1086,850 +1109,871 @@
 
   <div style="height:64px"></div>
   <p class="page-title">Financial Markets Master Handbook — LinkedIn Card Suite</p>
-  <!-- <p class="hint">Screenshot each card at 1080×1080 for LinkedIn. Use browser zoom 100% for best quality.</p> -->
+  <div id="stage">
+    <!-- ══ CARD 1 — MARKET UNIVERSE ══ -->
+    <div class="card active" id="c1">
+      <div class="ticker-bar">
+        <span class="ticker-text">
+          📈 EQUITIES &nbsp;·&nbsp; 💵 FOREX $7.5T/day &nbsp;·&nbsp; 🏦 BONDS $130T &nbsp;·&nbsp; 🛢 COMMODITIES
+          &nbsp;·&nbsp; 📊 DERIVATIVES $667T notional &nbsp;·&nbsp; 🔐 CRYPTO $3T+ &nbsp;·&nbsp; 🏗 PRIVATE EQUITY $13T
+          &nbsp;·&nbsp; 🌱 ESG $3.9T &nbsp;·&nbsp;
+          📈 EQUITIES &nbsp;·&nbsp; 💵 FOREX $7.5T/day &nbsp;·&nbsp; 🏦 BONDS $130T &nbsp;·&nbsp; 🛢 COMMODITIES
+          &nbsp;·&nbsp; 📊 DERIVATIVES $667T notional &nbsp;·&nbsp; 🔐 CRYPTO $3T+ &nbsp;·&nbsp; 🏗 PRIVATE EQUITY $13T
+          &nbsp;·&nbsp; 🌱 ESG $3.9T &nbsp;·&nbsp;
+        </span>
+      </div>
+      <div class="header">
+        <div class="eyebrow">THE FINANCIAL MARKETS UNIVERSE</div>
+        <h1>Every Market.<br><span>One Map.</span></h1>
+        <p class="sub">9 asset classes · $300+ trillion in global value · 24/7 worldwide activity</p>
+      </div>
+      <div class="grid">
+        <div class="mkt-card" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.25)">
+          <span class="icon">📈</span>
+          <div class="name">Equity Market</div>
+          <div class="detail">Ownership stakes in companies. Earn via price appreciation + dividends.</div>
+          <span class="vol" style="background:rgba(59,130,246,0.2);color:#60A5FA">~$300B/day (US)</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.25)">
+          <span class="icon">🏦</span>
+          <div class="name">Bond / Fixed Income</div>
+          <div class="detail">Debt instruments. Coupon payments + principal return at maturity.</div>
+          <span class="vol" style="background:rgba(245,158,11,0.2);color:#FBB540">~$900B/day · $130T mkt</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.25)">
+          <span class="icon">💱</span>
+          <div class="name">Foreign Exchange</div>
+          <div class="detail">World's largest market. 24/5. 89% of trades involve USD.</div>
+          <span class="vol" style="background:rgba(6,182,212,0.2);color:#22D3EE">$7.5 TRILLION/day</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(217,119,6,0.08);border-color:rgba(217,119,6,0.25)">
+          <span class="icon">🛢️</span>
+          <div class="name">Commodity Market</div>
+          <div class="detail">Oil, gold, wheat, copper. Physical + futures-based trading.</div>
+          <span class="vol" style="background:rgba(217,119,6,0.2);color:#FBBF24">~$1.5T/day volume</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.25)">
+          <span class="icon">⚙️</span>
+          <div class="name">Derivatives</div>
+          <div class="detail">Options, futures, swaps. Value derived from underlying assets.</div>
+          <span class="vol" style="background:rgba(124,58,237,0.2);color:#A78BFA">$667T notional OTC</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(5,150,105,0.08);border-color:rgba(5,150,105,0.25)">
+          <span class="icon">🏗️</span>
+          <div class="name">Private Markets</div>
+          <div class="detail">PE, VC, private credit. Not exchange-listed. Higher returns + illiquidity.</div>
+          <span class="vol" style="background:rgba(5,150,105,0.2);color:#34D399">$13T+ AUM globally</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(236,72,153,0.08);border-color:rgba(236,72,153,0.25)">
+          <span class="icon">🔐</span>
+          <div class="name">Crypto / Digital Assets</div>
+          <div class="detail">Decentralized, 24/7. Bitcoin, Ethereum, DeFi protocols.</div>
+          <span class="vol" style="background:rgba(236,72,153,0.2);color:#F472B6">~$100B/day peak</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(20,184,166,0.08);border-color:rgba(20,184,166,0.25)">
+          <span class="icon">🏢</span>
+          <div class="name">Real Estate / REITs</div>
+          <div class="detail">Direct property + publicly traded REITs. Income + inflation hedge.</div>
+          <span class="vol" style="background:rgba(20,184,166,0.2);color:#2DD4BF">$326T global market</span>
+        </div>
+        <div class="mkt-card" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.25)">
+          <span class="icon">🌱</span>
+          <div class="name">ESG / Sustainable</div>
+          <div class="detail">Green bonds, ESG funds, carbon credits. $1T+ green bonds in 2025.</div>
+          <span class="vol" style="background:rgba(16,185,129,0.2);color:#34D399">$3.9T ESG fund AUM</span>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <span>🔑 Primary Market: Capital goes to COMPANY</span>
+        <span>🔄 Secondary Market: Capital goes to SELLER</span>
+        <span>#FinancialMarkets #Investing</span>
+      </div>
+    </div>
 
-  <!-- ══ CARD 1 — MARKET UNIVERSE ══ -->
-  <div class="card active" id="c1">
-    <div class="ticker-bar">
-      <span class="ticker-text">
-        📈 EQUITIES &nbsp;·&nbsp; 💵 FOREX $7.5T/day &nbsp;·&nbsp; 🏦 BONDS $130T &nbsp;·&nbsp; 🛢 COMMODITIES
-        &nbsp;·&nbsp; 📊 DERIVATIVES $667T notional &nbsp;·&nbsp; 🔐 CRYPTO $3T+ &nbsp;·&nbsp; 🏗 PRIVATE EQUITY $13T
-        &nbsp;·&nbsp; 🌱 ESG $3.9T &nbsp;·&nbsp;
-        📈 EQUITIES &nbsp;·&nbsp; 💵 FOREX $7.5T/day &nbsp;·&nbsp; 🏦 BONDS $130T &nbsp;·&nbsp; 🛢 COMMODITIES
-        &nbsp;·&nbsp; 📊 DERIVATIVES $667T notional &nbsp;·&nbsp; 🔐 CRYPTO $3T+ &nbsp;·&nbsp; 🏗 PRIVATE EQUITY $13T
-        &nbsp;·&nbsp; 🌱 ESG $3.9T &nbsp;·&nbsp;
-      </span>
-    </div>
-    <div class="header">
-      <div class="eyebrow">THE FINANCIAL MARKETS UNIVERSE</div>
-      <h1>Every Market.<br><span>One Map.</span></h1>
-      <p class="sub">9 asset classes · $300+ trillion in global value · 24/7 worldwide activity</p>
-    </div>
-    <div class="grid">
-      <div class="mkt-card" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.25)">
-        <span class="icon">📈</span>
-        <div class="name">Equity Market</div>
-        <div class="detail">Ownership stakes in companies. Earn via price appreciation + dividends.</div>
-        <span class="vol" style="background:rgba(59,130,246,0.2);color:#60A5FA">~$300B/day (US)</span>
+    <!-- ══ CARD 2 — MONEY FLOW ══ -->
+    <div class="card" id="c2">
+      <div class="top-band"><span>FOLLOW THE MONEY — HOW CAPITAL FLOWS THROUGH THE FINANCIAL SYSTEM</span></div>
+      <div class="header">
+        <h1>How <em>Money Actually</em><br>Moves in Markets</h1>
+        <p class="sub">At every step, someone extracts value. This is how the system works.</p>
       </div>
-      <div class="mkt-card" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.25)">
-        <span class="icon">🏦</span>
-        <div class="name">Bond / Fixed Income</div>
-        <div class="detail">Debt instruments. Coupon payments + principal return at maturity.</div>
-        <span class="vol" style="background:rgba(245,158,11,0.2);color:#FBB540">~$900B/day · $130T mkt</span>
+      <div class="flow-chain">
+        <div class="flow-node" style="background:rgba(5,150,105,0.1);border-color:rgba(5,150,105,0.3)">
+          <div class="num" style="background:rgba(5,150,105,0.4);color:#34D399">1</div>
+          <div class="content">
+            <div class="entity">💰 Savers & Investors</div>
+            <div class="desc">Individuals, pension funds, sovereign wealth funds deposit and invest capital seeking
+              returns</div>
+          </div>
+          <span class="earn" style="background:rgba(5,150,105,0.2);color:#34D399">Capital source</span>
+        </div>
+        <div class="flow-arrow"><span>Broker routes order · earns commission + spread</span></div>
+        <div class="flow-node" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.3)">
+          <div class="num" style="background:rgba(59,130,246,0.4);color:#93C5FD">2</div>
+          <div class="content">
+            <div class="entity">🏢 Brokers & Market Makers</div>
+            <div class="desc">Route orders to exchanges or act as counterparty. Market makers earn the bid-ask spread on
+              every trade</div>
+          </div>
+          <span class="earn" style="background:rgba(59,130,246,0.2);color:#93C5FD">Spread + commission</span>
+        </div>
+        <div class="flow-arrow"><span>Clearing house guarantees settlement</span></div>
+        <div class="flow-node" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3)">
+          <div class="num" style="background:rgba(124,58,237,0.4);color:#C4B5FD">3</div>
+          <div class="content">
+            <div class="entity">🏛 Exchanges, Clearing & Custody</div>
+            <div class="desc">Exchange matches orders. Clearing house (DTCC, LCH) guarantees both sides. Custodian holds
+              final title</div>
+          </div>
+          <span class="earn" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Listing + clearing fees</span>
+        </div>
+        <div class="flow-arrow"><span>Investment banks underwrite new issuances</span></div>
+        <div class="flow-node" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.3)">
+          <div class="num" style="background:rgba(245,158,11,0.4);color:#FCD34D">4</div>
+          <div class="content">
+            <div class="entity">🏦 Investment Banks (Primary Market)</div>
+            <div class="desc">Price and underwrite IPOs, bonds, M&A. Distribute to institutional investors. The only
+              point
+              where company gets money</div>
+          </div>
+          <span class="earn" style="background:rgba(245,158,11,0.2);color:#FCD34D">1–7% underwriting fee</span>
+        </div>
+        <div class="flow-arrow"><span>Capital flows to productive use</span></div>
+        <div class="flow-node" style="background:rgba(220,38,38,0.1);border-color:rgba(220,38,38,0.3)">
+          <div class="num" style="background:rgba(220,38,38,0.4);color:#FCA5A5">5</div>
+          <div class="content">
+            <div class="entity">🏭 Companies & Governments</div>
+            <div class="desc">Receive capital to build, hire, expand. Repay via dividends, bond coupons, and future
+              earnings growth</div>
+          </div>
+          <span class="earn" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Capital deployed</span>
+        </div>
       </div>
-      <div class="mkt-card" style="background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.25)">
-        <span class="icon">💱</span>
-        <div class="name">Foreign Exchange</div>
-        <div class="detail">World's largest market. 24/5. 89% of trades involve USD.</div>
-        <span class="vol" style="background:rgba(6,182,212,0.2);color:#22D3EE">$7.5 TRILLION/day</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(217,119,6,0.08);border-color:rgba(217,119,6,0.25)">
-        <span class="icon">🛢️</span>
-        <div class="name">Commodity Market</div>
-        <div class="detail">Oil, gold, wheat, copper. Physical + futures-based trading.</div>
-        <span class="vol" style="background:rgba(217,119,6,0.2);color:#FBBF24">~$1.5T/day volume</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.25)">
-        <span class="icon">⚙️</span>
-        <div class="name">Derivatives</div>
-        <div class="detail">Options, futures, swaps. Value derived from underlying assets.</div>
-        <span class="vol" style="background:rgba(124,58,237,0.2);color:#A78BFA">$667T notional OTC</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(5,150,105,0.08);border-color:rgba(5,150,105,0.25)">
-        <span class="icon">🏗️</span>
-        <div class="name">Private Markets</div>
-        <div class="detail">PE, VC, private credit. Not exchange-listed. Higher returns + illiquidity.</div>
-        <span class="vol" style="background:rgba(5,150,105,0.2);color:#34D399">$13T+ AUM globally</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(236,72,153,0.08);border-color:rgba(236,72,153,0.25)">
-        <span class="icon">🔐</span>
-        <div class="name">Crypto / Digital Assets</div>
-        <div class="detail">Decentralized, 24/7. Bitcoin, Ethereum, DeFi protocols.</div>
-        <span class="vol" style="background:rgba(236,72,153,0.2);color:#F472B6">~$100B/day peak</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(20,184,166,0.08);border-color:rgba(20,184,166,0.25)">
-        <span class="icon">🏢</span>
-        <div class="name">Real Estate / REITs</div>
-        <div class="detail">Direct property + publicly traded REITs. Income + inflation hedge.</div>
-        <span class="vol" style="background:rgba(20,184,166,0.2);color:#2DD4BF">$326T global market</span>
-      </div>
-      <div class="mkt-card" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.25)">
-        <span class="icon">🌱</span>
-        <div class="name">ESG / Sustainable</div>
-        <div class="detail">Green bonds, ESG funds, carbon credits. $1T+ green bonds in 2025.</div>
-        <span class="vol" style="background:rgba(16,185,129,0.2);color:#34D399">$3.9T ESG fund AUM</span>
+      <div class="bottom-insight">
+        <span class="bulb">💡</span>
+        <p><strong>The Key Insight:</strong> The secondary market (where most trading happens) sends
+          <strong>zero</strong>
+          money to the original company. Only the PRIMARY market (IPO, bond issuance) puts capital directly into
+          corporate
+          hands. Every other trade simply moves ownership between investors — while intermediaries extract small fees at
+          massive scale.</p>
       </div>
     </div>
-    <div class="footer-bar">
-      <span>🔑 Primary Market: Capital goes to COMPANY</span>
-      <span>🔄 Secondary Market: Capital goes to SELLER</span>
-      <span>#FinancialMarkets #Investing</span>
-    </div>
-  </div>
 
-  <!-- ══ CARD 2 — MONEY FLOW ══ -->
-  <div class="card" id="c2">
-    <div class="top-band"><span>FOLLOW THE MONEY — HOW CAPITAL FLOWS THROUGH THE FINANCIAL SYSTEM</span></div>
-    <div class="header">
-      <h1>How <em>Money Actually</em><br>Moves in Markets</h1>
-      <p class="sub">At every step, someone extracts value. This is how the system works.</p>
+    <!-- ══ CARD 3 — KEY PLAYERS ══ -->
+    <div class="card" id="c3">
+      <div class="band"><span>THE FINANCIAL ECOSYSTEM — WHO DOES WHAT AND HOW THEY EARN</span></div>
+      <div class="header">
+        <h1>Buy Side vs.<br><em>Sell Side</em></h1>
+        <p style="font-size:14px;color:#94A3B8;margin-top:6px">Every player has a role. Every role has a revenue model.
+        </p>
+      </div>
+      <div class="players-grid">
+        <div>
+          <div class="players-col-head" style="background:rgba(5,150,105,0.2);color:#34D399">
+            🛒 BUY SIDE — Capital Providers
+          </div>
+          <div class="player-item" style="background:rgba(5,150,105,0.05)">
+            <span class="ico">👤</span>
+            <div class="info">
+              <div class="name">Retail Investors</div>
+              <div class="role">Individual investors via brokerage apps. Building personal wealth.</div>
+              <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">Earn: Appreciation +
+                Dividends</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(5,150,105,0.05)">
+            <span class="ico">🏛️</span>
+            <div class="info">
+              <div class="name">Pension Funds & Insurance</div>
+              <div class="role">Manage pooled capital for millions of beneficiaries. $100T+ AUM.</div>
+              <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">Earn: AUM Fee on returns</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(5,150,105,0.05)">
+            <span class="ico">🔮</span>
+            <div class="info">
+              <div class="name">Hedge Funds</div>
+              <div class="role">Complex strategies. Long/short, macro, quant. Leverage + derivatives.</div>
+              <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">2% mgmt + 20% performance</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(5,150,105,0.05)">
+            <span class="ico">📊</span>
+            <div class="info">
+              <div class="name">ETFs / Mutual Funds</div>
+              <div class="role">Pooled vehicles. Active or passive. Diversification at scale.</div>
+              <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">0.03%–1.5% expense ratio</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(5,150,105,0.05)">
+            <span class="ico">🏗️</span>
+            <div class="info">
+              <div class="name">Private Equity & VC</div>
+              <div class="role">PE acquires companies; VC funds startups. Power law returns.</div>
+              <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">2% + 20% carried interest</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="players-col-head" style="background:rgba(59,130,246,0.2);color:#60A5FA">
+            💼 SELL SIDE — Intermediaries & Facilitators
+          </div>
+          <div class="player-item" style="background:rgba(59,130,246,0.05)">
+            <span class="ico">🏦</span>
+            <div class="info">
+              <div class="name">Investment Banks</div>
+              <div class="role">Goldman, Morgan Stanley, JPM. Underwrite IPOs, advise M&A deals.</div>
+              <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">1–7% underwriting fee</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(59,130,246,0.05)">
+            <span class="ico">🔄</span>
+            <div class="info">
+              <div class="name">Market Makers</div>
+              <div class="role">Provide continuous liquidity. Citadel handles ~28% of US equity flow.</div>
+              <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Bid-ask spread × volume</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(59,130,246,0.05)">
+            <span class="ico">🛡️</span>
+            <div class="info">
+              <div class="name">Clearing Houses (DTCC)</div>
+              <div class="role">Guarantee every trade settles. Eliminate counterparty risk system-wide.</div>
+              <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Per-trade clearing fee</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(59,130,246,0.05)">
+            <span class="ico">🏛️</span>
+            <div class="info">
+              <div class="name">Credit Rating Agencies</div>
+              <div class="role">Moody's, S&P, Fitch. Rate creditworthiness of all debt issuers.</div>
+              <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Issuer-pays model</span>
+            </div>
+          </div>
+          <div class="player-item" style="background:rgba(59,130,246,0.05)">
+            <span class="ico">⚖️</span>
+            <div class="info">
+              <div class="name">Regulators (SEC, Fed, FCA)</div>
+              <div class="role">Enforce rules, protect investors, maintain systemic stability worldwide.</div>
+              <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Fines + taxpayer funded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin:16px 64px 0;padding:14px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;gap:12px;align-items:center">
+        <span style="font-size:20px">⚡</span>
+        <p style="font-size:11px;color:#94A3B8;line-height:1.6"><strong style="color:#FCD34D">Critical
+            distinction:</strong> The buy side DEPLOYS capital seeking returns. The sell side PROVIDES services enabling
+          those trades — and earns at every step regardless of market direction. Intermediary businesses are often more
+          consistently profitable than investing itself.</p>
+      </div>
     </div>
-    <div class="flow-chain">
-      <div class="flow-node" style="background:rgba(5,150,105,0.1);border-color:rgba(5,150,105,0.3)">
-        <div class="num" style="background:rgba(5,150,105,0.4);color:#34D399">1</div>
-        <div class="content">
-          <div class="entity">💰 Savers & Investors</div>
-          <div class="desc">Individuals, pension funds, sovereign wealth funds deposit and invest capital seeking
-            returns</div>
-        </div>
-        <span class="earn" style="background:rgba(5,150,105,0.2);color:#34D399">Capital source</span>
-      </div>
-      <div class="flow-arrow"><span>Broker routes order · earns commission + spread</span></div>
-      <div class="flow-node" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.3)">
-        <div class="num" style="background:rgba(59,130,246,0.4);color:#93C5FD">2</div>
-        <div class="content">
-          <div class="entity">🏢 Brokers & Market Makers</div>
-          <div class="desc">Route orders to exchanges or act as counterparty. Market makers earn the bid-ask spread on
-            every trade</div>
-        </div>
-        <span class="earn" style="background:rgba(59,130,246,0.2);color:#93C5FD">Spread + commission</span>
-      </div>
-      <div class="flow-arrow"><span>Clearing house guarantees settlement</span></div>
-      <div class="flow-node" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3)">
-        <div class="num" style="background:rgba(124,58,237,0.4);color:#C4B5FD">3</div>
-        <div class="content">
-          <div class="entity">🏛 Exchanges, Clearing & Custody</div>
-          <div class="desc">Exchange matches orders. Clearing house (DTCC, LCH) guarantees both sides. Custodian holds
-            final title</div>
-        </div>
-        <span class="earn" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Listing + clearing fees</span>
-      </div>
-      <div class="flow-arrow"><span>Investment banks underwrite new issuances</span></div>
-      <div class="flow-node" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.3)">
-        <div class="num" style="background:rgba(245,158,11,0.4);color:#FCD34D">4</div>
-        <div class="content">
-          <div class="entity">🏦 Investment Banks (Primary Market)</div>
-          <div class="desc">Price and underwrite IPOs, bonds, M&A. Distribute to institutional investors. The only point
-            where company gets money</div>
-        </div>
-        <span class="earn" style="background:rgba(245,158,11,0.2);color:#FCD34D">1–7% underwriting fee</span>
-      </div>
-      <div class="flow-arrow"><span>Capital flows to productive use</span></div>
-      <div class="flow-node" style="background:rgba(220,38,38,0.1);border-color:rgba(220,38,38,0.3)">
-        <div class="num" style="background:rgba(220,38,38,0.4);color:#FCA5A5">5</div>
-        <div class="content">
-          <div class="entity">🏭 Companies & Governments</div>
-          <div class="desc">Receive capital to build, hire, expand. Repay via dividends, bond coupons, and future
-            earnings growth</div>
-        </div>
-        <span class="earn" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Capital deployed</span>
-      </div>
-    </div>
-    <div class="bottom-insight">
-      <span class="bulb">💡</span>
-      <p><strong>The Key Insight:</strong> The secondary market (where most trading happens) sends <strong>zero</strong>
-        money to the original company. Only the PRIMARY market (IPO, bond issuance) puts capital directly into corporate
-        hands. Every other trade simply moves ownership between investors — while intermediaries extract small fees at
-        massive scale.</p>
-    </div>
-  </div>
 
-  <!-- ══ CARD 3 — KEY PLAYERS ══ -->
-  <div class="card" id="c3">
-    <div class="band"><span>THE FINANCIAL ECOSYSTEM — WHO DOES WHAT AND HOW THEY EARN</span></div>
-    <div class="header">
-      <h1>Buy Side vs.<br><em>Sell Side</em></h1>
-      <p style="font-size:14px;color:#94A3B8;margin-top:6px">Every player has a role. Every role has a revenue model.
-      </p>
-    </div>
-    <div class="players-grid">
-      <div>
-        <div class="players-col-head" style="background:rgba(5,150,105,0.2);color:#34D399">
-          🛒 BUY SIDE — Capital Providers
+    <!-- ══ CARD 4 — LEGENDARY INVESTORS ══ -->
+    <div class="card" id="c4">
+      <div class="band"><span>LEGENDS OF INVESTING — BILLIONAIRES, THEIR EDGE, AND THEIR LESSON FOR YOU</span></div>
+      <div class="header">
+        <h1>Legendary <em>Investors</em><br>& Their Secrets</h1>
+      </div>
+      <div class="investor-grid">
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#1E4D8C,#3B82F6)">WB</div>
+            <div>
+              <div class="name">Warren Buffett</div>
+              <div class="nw">~$157B · Value Investing</div>
+            </div>
+          </div>
+          <div class="strategy">Buy wonderful companies at fair prices. Hold forever. Economic moat is everything.
+            20%/year compounded for 60+ years.</div>
+          <div class="lesson">"Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1."</div>
         </div>
-        <div class="player-item" style="background:rgba(5,150,105,0.05)">
-          <span class="ico">👤</span>
-          <div class="info">
-            <div class="name">Retail Investors</div>
-            <div class="role">Individual investors via brokerage apps. Building personal wealth.</div>
-            <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">Earn: Appreciation +
-              Dividends</span>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#059669,#34D399)">JS</div>
+            <div>
+              <div class="name">Jim Simons</div>
+              <div class="nw">~$31B · Quantitative</div>
+            </div>
+          </div>
+          <div class="strategy">Pure mathematics. Medallion Fund: 62%/year before fees for 33 years. Hired physicists,
+            not
+            MBAs. The greatest track record in history.</div>
+          <div class="lesson">"If you have a really good model, you don't need to know why it works."</div>
+        </div>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#1E4D8C,#0891B2)">RD</div>
+            <div>
+              <div class="name">Ray Dalio</div>
+              <div class="nw">~$15B · Global Macro</div>
+            </div>
+          </div>
+          <div class="strategy">All-Weather Portfolio. Risk parity. Study long-term debt cycles. World's largest hedge
+            fund: Bridgewater $150B AUM.</div>
+          <div class="lesson">"Diversify across truly uncorrelated assets. Design to survive ANY macro environment."
           </div>
         </div>
-        <div class="player-item" style="background:rgba(5,150,105,0.05)">
-          <span class="ico">🏛️</span>
-          <div class="info">
-            <div class="name">Pension Funds & Insurance</div>
-            <div class="role">Manage pooled capital for millions of beneficiaries. $100T+ AUM.</div>
-            <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">Earn: AUM Fee on returns</span>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#DC2626,#EF4444)">GS</div>
+            <div>
+              <div class="name">George Soros</div>
+              <div class="nw">~$6.7B · Reflexivity</div>
+            </div>
+          </div>
+          <div class="strategy">Markets are self-reinforcing feedback loops. Broke the Bank of England in 1992. $1B+
+            profit in ONE day shorting the British pound.</div>
+          <div class="lesson">"Markets are not rational. Find where perception diverges from reality — then bet big."
           </div>
         </div>
-        <div class="player-item" style="background:rgba(5,150,105,0.05)">
-          <span class="ico">🔮</span>
-          <div class="info">
-            <div class="name">Hedge Funds</div>
-            <div class="role">Complex strategies. Long/short, macro, quant. Leverage + derivatives.</div>
-            <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">2% mgmt + 20% performance</span>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#5B2C8D,#7C3AED)">PL</div>
+            <div>
+              <div class="name">Peter Lynch</div>
+              <div class="nw">~$450M · Growth</div>
+            </div>
+          </div>
+          <div class="strategy">29.2%/year at Magellan Fund. "Invest in what you know." Hunt for tenbaggers. Grew $18M
+            to
+            $14B in 13 years.</div>
+          <div class="lesson">"Know what you own, and know why you own it. The best ideas are right in front of you."
           </div>
         </div>
-        <div class="player-item" style="background:rgba(5,150,105,0.05)">
-          <span class="ico">📊</span>
-          <div class="info">
-            <div class="name">ETFs / Mutual Funds</div>
-            <div class="role">Pooled vehicles. Active or passive. Diversification at scale.</div>
-            <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">0.03%–1.5% expense ratio</span>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B)">SD</div>
+            <div>
+              <div class="name">Stan Druckenmiller</div>
+              <div class="nw">~$8B · Global Macro</div>
+            </div>
           </div>
+          <div class="strategy">30%/year for 30 years — ZERO losing years. Concentration + conviction. Only bet big when
+            odds are overwhelmingly in your favour.</div>
+          <div class="lesson">"Preservation of capital is Rule #1. Bet big only when you have an unfair edge."</div>
         </div>
-        <div class="player-item" style="background:rgba(5,150,105,0.05)">
-          <span class="ico">🏗️</span>
-          <div class="info">
-            <div class="name">Private Equity & VC</div>
-            <div class="role">PE acquires companies; VC funds startups. Power law returns.</div>
-            <span class="fee" style="background:rgba(5,150,105,0.15);color:#34D399">2% + 20% carried interest</span>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#0891B2,#22D3EE)">JB</div>
+            <div>
+              <div class="name">John Bogle</div>
+              <div class="nw">Legacy · Passive</div>
+            </div>
+          </div>
+          <div class="strategy">Created the index fund (1976). Most active managers underperform after fees. Vanguard
+            now
+            manages $10+ trillion in low-cost funds.</div>
+          <div class="lesson">"Don't look for the needle in the haystack. Just buy the haystack."</div>
+        </div>
+        <div class="inv-card">
+          <div class="top">
+            <div class="avatar" style="background:linear-gradient(135deg,#1A6B3A,#059669)">BG</div>
+            <div>
+              <div class="name">Benjamin Graham</div>
+              <div class="nw">Pioneer · Father of Value</div>
+            </div>
+          </div>
+          <div class="strategy">Created security analysis as a discipline. Margin of Safety. Mr. Market allegory.
+            Mentored
+            Warren Buffett directly.</div>
+          <div class="lesson">"Only buy with a meaningful margin of safety. Mr. Market is your servant, not your
+            master."
           </div>
         </div>
       </div>
-      <div>
-        <div class="players-col-head" style="background:rgba(59,130,246,0.2);color:#60A5FA">
-          💼 SELL SIDE — Intermediaries & Facilitators
-        </div>
-        <div class="player-item" style="background:rgba(59,130,246,0.05)">
-          <span class="ico">🏦</span>
-          <div class="info">
-            <div class="name">Investment Banks</div>
-            <div class="role">Goldman, Morgan Stanley, JPM. Underwrite IPOs, advise M&A deals.</div>
-            <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">1–7% underwriting fee</span>
-          </div>
-        </div>
-        <div class="player-item" style="background:rgba(59,130,246,0.05)">
-          <span class="ico">🔄</span>
-          <div class="info">
-            <div class="name">Market Makers</div>
-            <div class="role">Provide continuous liquidity. Citadel handles ~28% of US equity flow.</div>
-            <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Bid-ask spread × volume</span>
-          </div>
-        </div>
-        <div class="player-item" style="background:rgba(59,130,246,0.05)">
-          <span class="ico">🛡️</span>
-          <div class="info">
-            <div class="name">Clearing Houses (DTCC)</div>
-            <div class="role">Guarantee every trade settles. Eliminate counterparty risk system-wide.</div>
-            <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Per-trade clearing fee</span>
-          </div>
-        </div>
-        <div class="player-item" style="background:rgba(59,130,246,0.05)">
-          <span class="ico">🏛️</span>
-          <div class="info">
-            <div class="name">Credit Rating Agencies</div>
-            <div class="role">Moody's, S&P, Fitch. Rate creditworthiness of all debt issuers.</div>
-            <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Issuer-pays model</span>
-          </div>
-        </div>
-        <div class="player-item" style="background:rgba(59,130,246,0.05)">
-          <span class="ico">⚖️</span>
-          <div class="info">
-            <div class="name">Regulators (SEC, Fed, FCA)</div>
-            <div class="role">Enforce rules, protect investors, maintain systemic stability worldwide.</div>
-            <span class="fee" style="background:rgba(59,130,246,0.15);color:#60A5FA">Fines + taxpayer funded</span>
-          </div>
-        </div>
-      </div>
     </div>
-    <div
-      style="margin:16px 64px 0;padding:14px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;gap:12px;align-items:center">
-      <span style="font-size:20px">⚡</span>
-      <p style="font-size:11px;color:#94A3B8;line-height:1.6"><strong style="color:#FCD34D">Critical
-          distinction:</strong> The buy side DEPLOYS capital seeking returns. The sell side PROVIDES services enabling
-        those trades — and earns at every step regardless of market direction. Intermediary businesses are often more
-        consistently profitable than investing itself.</p>
-    </div>
-  </div>
 
-  <!-- ══ CARD 4 — LEGENDARY INVESTORS ══ -->
-  <div class="card" id="c4">
-    <div class="band"><span>LEGENDS OF INVESTING — BILLIONAIRES, THEIR EDGE, AND THEIR LESSON FOR YOU</span></div>
-    <div class="header">
-      <h1>Legendary <em>Investors</em><br>& Their Secrets</h1>
-    </div>
-    <div class="investor-grid">
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#1E4D8C,#3B82F6)">WB</div>
-          <div>
-            <div class="name">Warren Buffett</div>
-            <div class="nw">~$157B · Value Investing</div>
-          </div>
-        </div>
-        <div class="strategy">Buy wonderful companies at fair prices. Hold forever. Economic moat is everything.
-          20%/year compounded for 60+ years.</div>
-        <div class="lesson">"Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1."</div>
+    <!-- ══ CARD 5 — TECHNICAL ANALYSIS ══ -->
+    <div class="card" id="c5">
+      <div class="band"><span>TECHNICAL ANALYSIS — THE COMPLETE INDICATOR & PATTERN CHEAT SHEET</span></div>
+      <div class="header">
+        <h1>Technical Analysis<br><em>Cheat Sheet</em></h1>
+        <p class="sub">The 6 core indicators every trader must master + 8 key candlestick signals</p>
       </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#059669,#34D399)">JS</div>
-          <div>
-            <div class="name">Jim Simons</div>
-            <div class="nw">~$31B · Quantitative</div>
+      <div class="ta-grid">
+        <div class="ta-card">
+          <div class="icon">📊</div>
+          <div class="name">RSI — Momentum</div>
+          <div class="desc">Relative Strength Index. Measures speed of price changes on a 0–100 scale. 14-period
+            default.
           </div>
+          <span class="signal">Above 70 = Overbought · Below 30 = Oversold</span>
         </div>
-        <div class="strategy">Pure mathematics. Medallion Fund: 62%/year before fees for 33 years. Hired physicists, not
-          MBAs. The greatest track record in history.</div>
-        <div class="lesson">"If you have a really good model, you don't need to know why it works."</div>
-      </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#1E4D8C,#0891B2)">RD</div>
-          <div>
-            <div class="name">Ray Dalio</div>
-            <div class="nw">~$15B · Global Macro</div>
+        <div class="ta-card">
+          <div class="icon">📉</div>
+          <div class="name">MACD — Trend</div>
+          <div class="desc">12 EMA minus 26 EMA. Signal line = 9-day EMA. Histogram = momentum strength.</div>
+          <span class="signal">Cross above signal = Bullish · Below = Bearish</span>
+        </div>
+        <div class="ta-card">
+          <div class="icon">〰️</div>
+          <div class="name">Moving Averages</div>
+          <div class="desc">SMA and EMA smooth noise. 50-day and 200-day are the most watched in the world.</div>
+          <span class="signal">Golden Cross = Bull · Death Cross = Bear</span>
+        </div>
+        <div class="ta-card">
+          <div class="icon">🎯</div>
+          <div class="name">Bollinger Bands</div>
+          <div class="desc">2 standard deviations above/below 20-day MA. Bands expand with volatility, contract before
+            breakouts.</div>
+          <span class="signal">Band squeeze = Big move coming</span>
+        </div>
+        <div class="ta-card">
+          <div class="icon">📐</div>
+          <div class="name">Fibonacci Retracement</div>
+          <div class="desc">Key pullback levels based on the golden ratio. 38.2%, 50%, 61.8% are the most powerful
+            zones.
           </div>
+          <span class="signal">Golden zone: 38.2%–61.8% for entries</span>
         </div>
-        <div class="strategy">All-Weather Portfolio. Risk parity. Study long-term debt cycles. World's largest hedge
-          fund: Bridgewater $150B AUM.</div>
-        <div class="lesson">"Diversify across truly uncorrelated assets. Design to survive ANY macro environment."</div>
-      </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#DC2626,#EF4444)">GS</div>
-          <div>
-            <div class="name">George Soros</div>
-            <div class="nw">~$6.7B · Reflexivity</div>
+        <div class="ta-card">
+          <div class="icon">😱</div>
+          <div class="name">VIX — Fear Gauge</div>
+          <div class="desc">S&P 500 30-day implied volatility. The market's "fear index" used by professionals globally.
           </div>
-        </div>
-        <div class="strategy">Markets are self-reinforcing feedback loops. Broke the Bank of England in 1992. $1B+
-          profit in ONE day shorting the British pound.</div>
-        <div class="lesson">"Markets are not rational. Find where perception diverges from reality — then bet big."
+          <span class="signal">Above 30 = Fear · Above 40 = Panic/Opportunity</span>
         </div>
       </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#5B2C8D,#7C3AED)">PL</div>
-          <div>
-            <div class="name">Peter Lynch</div>
-            <div class="nw">~$450M · Growth</div>
-          </div>
+      <div class="candlestick-row">
+        <div class="cs-card">
+          <div class="cs-icon">🟢</div>
+          <div class="cs-name">Hammer</div>
+          <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH REVERSAL</span>
         </div>
-        <div class="strategy">29.2%/year at Magellan Fund. "Invest in what you know." Hunt for tenbaggers. Grew $18M to
-          $14B in 13 years.</div>
-        <div class="lesson">"Know what you own, and know why you own it. The best ideas are right in front of you."
+        <div class="cs-card">
+          <div class="cs-icon">🔴</div>
+          <div class="cs-name">Shooting Star</div>
+          <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH REVERSAL</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">📗</div>
+          <div class="cs-name">Bullish Engulfing</div>
+          <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH REVERSAL</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">📕</div>
+          <div class="cs-name">Bearish Engulfing</div>
+          <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH REVERSAL</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">⭐</div>
+          <div class="cs-name">Morning Star</div>
+          <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH – VERY HIGH</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">🌙</div>
+          <div class="cs-name">Evening Star</div>
+          <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH – VERY HIGH</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">➕</div>
+          <div class="cs-name">Doji</div>
+          <span class="cs-type" style="background:rgba(245,158,11,0.3);color:#FCD34D">INDECISION</span>
+        </div>
+        <div class="cs-card">
+          <div class="cs-icon">⬛</div>
+          <div class="cs-name">Marubozu</div>
+          <span class="cs-type" style="background:rgba(59,130,246,0.3);color:#93C5FD">CONTINUATION</span>
         </div>
       </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B)">SD</div>
-          <div>
-            <div class="name">Stan Druckenmiller</div>
-            <div class="nw">~$8B · Global Macro</div>
-          </div>
-        </div>
-        <div class="strategy">30%/year for 30 years — ZERO losing years. Concentration + conviction. Only bet big when
-          odds are overwhelmingly in your favour.</div>
-        <div class="lesson">"Preservation of capital is Rule #1. Bet big only when you have an unfair edge."</div>
-      </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#0891B2,#22D3EE)">JB</div>
-          <div>
-            <div class="name">John Bogle</div>
-            <div class="nw">Legacy · Passive</div>
-          </div>
-        </div>
-        <div class="strategy">Created the index fund (1976). Most active managers underperform after fees. Vanguard now
-          manages $10+ trillion in low-cost funds.</div>
-        <div class="lesson">"Don't look for the needle in the haystack. Just buy the haystack."</div>
-      </div>
-      <div class="inv-card">
-        <div class="top">
-          <div class="avatar" style="background:linear-gradient(135deg,#1A6B3A,#059669)">BG</div>
-          <div>
-            <div class="name">Benjamin Graham</div>
-            <div class="nw">Pioneer · Father of Value</div>
-          </div>
-        </div>
-        <div class="strategy">Created security analysis as a discipline. Margin of Safety. Mr. Market allegory. Mentored
-          Warren Buffett directly.</div>
-        <div class="lesson">"Only buy with a meaningful margin of safety. Mr. Market is your servant, not your master."
-        </div>
+      <div
+        style="margin:12px 64px 0;padding:12px 20px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:12px;display:flex;gap:10px;align-items:center">
+        <span style="font-size:18px">⚡</span>
+        <p style="font-size:11px;color:#94A3B8;line-height:1.5"><strong style="color:#A78BFA">Pro Tip:</strong> Combine
+          RSI + MACD for higher-probability entries: Use MACD to confirm trend direction, then wait for RSI to pull back
+          to oversold (below 30) in an uptrend before buying. This combined approach filters out noise and improves win
+          rates significantly.</p>
       </div>
     </div>
-  </div>
 
-  <!-- ══ CARD 5 — TECHNICAL ANALYSIS ══ -->
-  <div class="card" id="c5">
-    <div class="band"><span>TECHNICAL ANALYSIS — THE COMPLETE INDICATOR & PATTERN CHEAT SHEET</span></div>
-    <div class="header">
-      <h1>Technical Analysis<br><em>Cheat Sheet</em></h1>
-      <p class="sub">The 6 core indicators every trader must master + 8 key candlestick signals</p>
-    </div>
-    <div class="ta-grid">
-      <div class="ta-card">
-        <div class="icon">📊</div>
-        <div class="name">RSI — Momentum</div>
-        <div class="desc">Relative Strength Index. Measures speed of price changes on a 0–100 scale. 14-period default.
+    <!-- ══ CARD 6 — OPTIONS GREEKS ══ -->
+    <div class="card" id="c6">
+      <div class="band"><span>OPTIONS TRADING — THE GREEKS DECODED + KEY STRATEGIES FOR EVERY MARKET CONDITION</span>
+      </div>
+      <div class="header">
+        <h1>Options Greeks<br><em>Decoded</em></h1>
+      </div>
+      <div class="greeks-grid">
+        <div class="greek-card">
+          <span class="symbol">Δ</span>
+          <div class="gname">Delta</div>
+          <div class="gmeasure">$ change in option per $1 move in underlying asset</div>
+          <div class="gval">Calls: 0→+1.0<br>Puts: 0→−1.0<br>ATM ≈ ±0.50</div>
         </div>
-        <span class="signal">Above 70 = Overbought · Below 30 = Oversold</span>
-      </div>
-      <div class="ta-card">
-        <div class="icon">📉</div>
-        <div class="name">MACD — Trend</div>
-        <div class="desc">12 EMA minus 26 EMA. Signal line = 9-day EMA. Histogram = momentum strength.</div>
-        <span class="signal">Cross above signal = Bullish · Below = Bearish</span>
-      </div>
-      <div class="ta-card">
-        <div class="icon">〰️</div>
-        <div class="name">Moving Averages</div>
-        <div class="desc">SMA and EMA smooth noise. 50-day and 200-day are the most watched in the world.</div>
-        <span class="signal">Golden Cross = Bull · Death Cross = Bear</span>
-      </div>
-      <div class="ta-card">
-        <div class="icon">🎯</div>
-        <div class="name">Bollinger Bands</div>
-        <div class="desc">2 standard deviations above/below 20-day MA. Bands expand with volatility, contract before
-          breakouts.</div>
-        <span class="signal">Band squeeze = Big move coming</span>
-      </div>
-      <div class="ta-card">
-        <div class="icon">📐</div>
-        <div class="name">Fibonacci Retracement</div>
-        <div class="desc">Key pullback levels based on the golden ratio. 38.2%, 50%, 61.8% are the most powerful zones.
+        <div class="greek-card">
+          <span class="symbol">Γ</span>
+          <div class="gname">Gamma</div>
+          <div class="gmeasure">Rate of change of Delta — how fast your delta moves</div>
+          <div class="gval">Highest near<br>the money<br>Near expiry</div>
         </div>
-        <span class="signal">Golden zone: 38.2%–61.8% for entries</span>
-      </div>
-      <div class="ta-card">
-        <div class="icon">😱</div>
-        <div class="name">VIX — Fear Gauge</div>
-        <div class="desc">S&P 500 30-day implied volatility. The market's "fear index" used by professionals globally.
+        <div class="greek-card">
+          <span class="symbol">Θ</span>
+          <div class="gname">Theta</div>
+          <div class="gmeasure">Daily time decay — value lost per day passing</div>
+          <div class="gval">Always negative<br>for buyers<br>Sellers earn it</div>
         </div>
-        <span class="signal">Above 30 = Fear · Above 40 = Panic/Opportunity</span>
+        <div class="greek-card">
+          <span class="symbol">V</span>
+          <div class="gname">Vega</div>
+          <div class="gmeasure">Sensitivity to 1% change in implied volatility (IV)</div>
+          <div class="gval">Long options<br>want high IV<br>IV crush danger</div>
+        </div>
+        <div class="greek-card">
+          <span class="symbol">ρ</span>
+          <div class="gname">Rho</div>
+          <div class="gmeasure">Sensitivity to 1% change in interest rates</div>
+          <div class="gval">Mostly relevant<br>for LEAPS<br>(long-dated)</div>
+        </div>
+      </div>
+      <div
+        style="margin:8px 64px;padding:12px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;gap:12px;align-items:center">
+        <span style="font-size:20px">⚡</span>
+        <p style="font-size:11px;color:#94A3B8;line-height:1.6"><strong style="color:#FCD34D">The Core
+            Trade-off:</strong>
+          Buying options gives you positive gamma (profit from big moves) but negative theta (pay daily time decay).
+          Selling options gives you positive theta (collect daily premium) but negative gamma (dangerous if wrong). You
+          CANNOT have both — this is the fundamental tension every options trader must manage daily.</p>
+      </div>
+      <div class="options-strats">
+        <div class="os-card">
+          <div class="os-name">📈 Long Call</div>
+          <div class="os-view" style="color:#34D399">Strongly Bullish</div>
+          <div class="os-desc">Buy call option. Max profit: unlimited. Max loss: premium paid only.</div>
+        </div>
+        <div class="os-card">
+          <div class="os-name">📊 Covered Call</div>
+          <div class="os-view" style="color:#60A5FA">Neutral → Mildly Bullish</div>
+          <div class="os-desc">Own stock + sell call. Generate monthly income on shares you hold.</div>
+        </div>
+        <div class="os-card">
+          <div class="os-name">🦅 Iron Condor</div>
+          <div class="os-view" style="color:#FCD34D">Neutral — Range Bound</div>
+          <div class="os-desc">Sell OTM call + put spreads. Profit when stock stays in range. 30–45 DTE.</div>
+        </div>
+        <div class="os-card">
+          <div class="os-name">🎭 Long Straddle</div>
+          <div class="os-view" style="color:#A78BFA">Big Move — Any Direction</div>
+          <div class="os-desc">Buy ATM call + put. Best for earnings plays when direction is unknown.</div>
+        </div>
+        <div class="os-card">
+          <div class="os-name">🛡️ Bull Call Spread</div>
+          <div class="os-view" style="color:#34D399">Moderately Bullish</div>
+          <div class="os-desc">Buy lower call + sell higher call. Cheaper than long call. Defined risk.</div>
+        </div>
+        <div class="os-card">
+          <div class="os-name">🔮 Cash-Secured Put</div>
+          <div class="os-view" style="color:#60A5FA">Mildly Bullish</div>
+          <div class="os-desc">Sell put + hold cash. Get paid to wait to buy stock at your target price.</div>
+        </div>
       </div>
     </div>
-    <div class="candlestick-row">
-      <div class="cs-card">
-        <div class="cs-icon">🟢</div>
-        <div class="cs-name">Hammer</div>
-        <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH REVERSAL</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">🔴</div>
-        <div class="cs-name">Shooting Star</div>
-        <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH REVERSAL</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">📗</div>
-        <div class="cs-name">Bullish Engulfing</div>
-        <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH REVERSAL</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">📕</div>
-        <div class="cs-name">Bearish Engulfing</div>
-        <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH REVERSAL</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">⭐</div>
-        <div class="cs-name">Morning Star</div>
-        <span class="cs-type" style="background:rgba(5,150,105,0.3);color:#34D399">BULLISH – VERY HIGH</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">🌙</div>
-        <div class="cs-name">Evening Star</div>
-        <span class="cs-type" style="background:rgba(220,38,38,0.3);color:#FCA5A5">BEARISH – VERY HIGH</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">➕</div>
-        <div class="cs-name">Doji</div>
-        <span class="cs-type" style="background:rgba(245,158,11,0.3);color:#FCD34D">INDECISION</span>
-      </div>
-      <div class="cs-card">
-        <div class="cs-icon">⬛</div>
-        <div class="cs-name">Marubozu</div>
-        <span class="cs-type" style="background:rgba(59,130,246,0.3);color:#93C5FD">CONTINUATION</span>
-      </div>
-    </div>
-    <div
-      style="margin:12px 64px 0;padding:12px 20px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:12px;display:flex;gap:10px;align-items:center">
-      <span style="font-size:18px">⚡</span>
-      <p style="font-size:11px;color:#94A3B8;line-height:1.5"><strong style="color:#A78BFA">Pro Tip:</strong> Combine
-        RSI + MACD for higher-probability entries: Use MACD to confirm trend direction, then wait for RSI to pull back
-        to oversold (below 30) in an uptrend before buying. This combined approach filters out noise and improves win
-        rates significantly.</p>
-    </div>
-  </div>
 
-  <!-- ══ CARD 6 — OPTIONS GREEKS ══ -->
-  <div class="card" id="c6">
-    <div class="band"><span>OPTIONS TRADING — THE GREEKS DECODED + KEY STRATEGIES FOR EVERY MARKET CONDITION</span>
+    <!-- ══ CARD 7 — STRATEGIES ══ -->
+    <div class="card" id="c7">
+      <div class="band"><span>INVESTMENT STRATEGIES — 9 APPROACHES FROM BEGINNER-FRIENDLY TO INSTITUTIONAL-GRADE</span>
+      </div>
+      <div class="header">
+        <h1>Investment Strategies<br><em>Matrix</em></h1>
+        <p style="font-size:14px;color:#94A3B8;margin-top:6px">From index funds to algorithmic trading — every approach
+          mapped with its masters</p>
+      </div>
+      <div class="strat-grid">
+        <div class="strat-card" style="--accent:#3B82F6">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1D4ED8)">
+          </div>
+          <div class="sname">📦 Value Investing</div>
+          <div class="smasters">Buffett · Graham · Munger</div>
+          <div class="sdesc">Buy stocks below intrinsic value. Hold until market corrects. Margin of safety always.
+          </div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Years–Decades</span>
+            <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low-Medium Risk</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Beginner OK</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#34D399)">
+          </div>
+          <div class="sname">🚀 Growth Investing</div>
+          <div class="smasters">Peter Lynch · Philip Fisher</div>
+          <div class="sdesc">Buy companies with above-average revenue and earnings growth potential. Hunt for
+            tenbaggers.
+          </div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">1–10 Years</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Medium Risk</span>
+            <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">PEG &lt; 1</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366F1,#818CF8)">
+          </div>
+          <div class="sname">📋 Passive / Index</div>
+          <div class="smasters">John Bogle · Vanguard</div>
+          <div class="sdesc">Own the entire market via low-cost index funds. Beat 80%+ of active managers after fees
+            over
+            time.</div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(99,102,241,0.2);color:#A5B4FC">Long-Term</span>
+            <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low Risk</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Absolute Beginner</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D97706,#F59E0B)">
+          </div>
+          <div class="sname">🌍 Global Macro</div>
+          <div class="smasters">Soros · Dalio · Druckenmiller</div>
+          <div class="sdesc">Directional bets on currencies, rates, economies. Top-down. Leveraged. Can profit from any
+            trend.</div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(217,119,6,0.2);color:#FBBF24">Days–Years</span>
+            <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Very High Risk</span>
+            <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Advanced</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#DC2626,#EF4444)">
+          </div>
+          <div class="sname">🔀 Long / Short Equity</div>
+          <div class="smasters">Tiger Management · Viking</div>
+          <div class="sdesc">Buy undervalued, short overvalued stocks simultaneously. Profit from the spread. Hedge
+            market
+            risk.</div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Weeks–Months</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">High Risk</span>
+            <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Institutional</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#22D3EE)">
+          </div>
+          <div class="sname">⚡ Quantitative / Algo</div>
+          <div class="smasters">Renaissance · Two Sigma · DE Shaw</div>
+          <div class="sdesc">Mathematical models extract statistical patterns. Pure data-driven. Human emotion
+            eliminated.
+          </div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(8,145,178,0.2);color:#67E8F9">Microseconds–Months</span>
+            <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Expert Level</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7C3AED,#9D4EDD)">
+          </div>
+          <div class="sname">🎭 Event-Driven</div>
+          <div class="smasters">Elliott Management · Pershing</div>
+          <div class="sdesc">Merger arbitrage, distressed, activist campaigns. Profit from corporate events and special
+            situations.</div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Months–Years</span>
+            <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">High Risk</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Advanced</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#10B981)">
+          </div>
+          <div class="sname">💰 Dividend Growth</div>
+          <div class="smasters">Dividend Aristocrats · BRK</div>
+          <div class="sdesc">Build reliable income from companies with 10–25+ years of consecutive dividend growth.
+          </div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Long-Term</span>
+            <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Low-Medium</span>
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Beginner OK</span>
+          </div>
+        </div>
+        <div class="strat-card">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F59E0B,#FBBF24)">
+          </div>
+          <div class="sname">🔄 All-Weather (Dalio)</div>
+          <div class="smasters">Ray Dalio · Bridgewater</div>
+          <div class="sdesc">30% stocks / 40% LT bonds / 15% IT bonds / 7.5% gold / 7.5% commodities. Balanced for any
+            economic regime.</div>
+          <div class="smeta">
+            <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Any Cycle</span>
+            <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low-Medium</span>
+            <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Intermediate</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin:14px 64px 0;padding:14px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:18px">⚡</span>
+        <p style="font-size:11px;color:#94A3B8;line-height:1.5"><strong style="color:#FCD34D">Edge × Leverage × Time =
+            Wealth.</strong> Every great investor found a genuine EDGE, applied it with appropriate LEVERAGE, and gave
+          it
+          TIME to compound. Most failures come from mistaking luck for edge — or impatience that kills compounding
+          before
+          it reaches its power.</p>
+      </div>
     </div>
-    <div class="header">
-      <h1>Options Greeks<br><em>Decoded</em></h1>
-    </div>
-    <div class="greeks-grid">
-      <div class="greek-card">
-        <span class="symbol">Δ</span>
-        <div class="gname">Delta</div>
-        <div class="gmeasure">$ change in option per $1 move in underlying asset</div>
-        <div class="gval">Calls: 0→+1.0<br>Puts: 0→−1.0<br>ATM ≈ ±0.50</div>
-      </div>
-      <div class="greek-card">
-        <span class="symbol">Γ</span>
-        <div class="gname">Gamma</div>
-        <div class="gmeasure">Rate of change of Delta — how fast your delta moves</div>
-        <div class="gval">Highest near<br>the money<br>Near expiry</div>
-      </div>
-      <div class="greek-card">
-        <span class="symbol">Θ</span>
-        <div class="gname">Theta</div>
-        <div class="gmeasure">Daily time decay — value lost per day passing</div>
-        <div class="gval">Always negative<br>for buyers<br>Sellers earn it</div>
-      </div>
-      <div class="greek-card">
-        <span class="symbol">V</span>
-        <div class="gname">Vega</div>
-        <div class="gmeasure">Sensitivity to 1% change in implied volatility (IV)</div>
-        <div class="gval">Long options<br>want high IV<br>IV crush danger</div>
-      </div>
-      <div class="greek-card">
-        <span class="symbol">ρ</span>
-        <div class="gname">Rho</div>
-        <div class="gmeasure">Sensitivity to 1% change in interest rates</div>
-        <div class="gval">Mostly relevant<br>for LEAPS<br>(long-dated)</div>
-      </div>
-    </div>
-    <div
-      style="margin:8px 64px;padding:12px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;gap:12px;align-items:center">
-      <span style="font-size:20px">⚡</span>
-      <p style="font-size:11px;color:#94A3B8;line-height:1.6"><strong style="color:#FCD34D">The Core Trade-off:</strong>
-        Buying options gives you positive gamma (profit from big moves) but negative theta (pay daily time decay).
-        Selling options gives you positive theta (collect daily premium) but negative gamma (dangerous if wrong). You
-        CANNOT have both — this is the fundamental tension every options trader must manage daily.</p>
-    </div>
-    <div class="options-strats">
-      <div class="os-card">
-        <div class="os-name">📈 Long Call</div>
-        <div class="os-view" style="color:#34D399">Strongly Bullish</div>
-        <div class="os-desc">Buy call option. Max profit: unlimited. Max loss: premium paid only.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-name">📊 Covered Call</div>
-        <div class="os-view" style="color:#60A5FA">Neutral → Mildly Bullish</div>
-        <div class="os-desc">Own stock + sell call. Generate monthly income on shares you hold.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-name">🦅 Iron Condor</div>
-        <div class="os-view" style="color:#FCD34D">Neutral — Range Bound</div>
-        <div class="os-desc">Sell OTM call + put spreads. Profit when stock stays in range. 30–45 DTE.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-name">🎭 Long Straddle</div>
-        <div class="os-view" style="color:#A78BFA">Big Move — Any Direction</div>
-        <div class="os-desc">Buy ATM call + put. Best for earnings plays when direction is unknown.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-name">🛡️ Bull Call Spread</div>
-        <div class="os-view" style="color:#34D399">Moderately Bullish</div>
-        <div class="os-desc">Buy lower call + sell higher call. Cheaper than long call. Defined risk.</div>
-      </div>
-      <div class="os-card">
-        <div class="os-name">🔮 Cash-Secured Put</div>
-        <div class="os-view" style="color:#60A5FA">Mildly Bullish</div>
-        <div class="os-desc">Sell put + hold cash. Get paid to wait to buy stock at your target price.</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ══ CARD 7 — STRATEGIES ══ -->
-  <div class="card" id="c7">
-    <div class="band"><span>INVESTMENT STRATEGIES — 9 APPROACHES FROM BEGINNER-FRIENDLY TO INSTITUTIONAL-GRADE</span>
+    <!-- ══ CARD 8 — CAREER ══ -->
+    <div class="card" id="c8">
+      <div class="band"><span>FINANCE CAREER ROADMAP — THREE TRACKS, REAL COMPENSATION, SKILLS THAT MATTER</span></div>
+      <div class="header">
+        <h1>Finance Career<br><em>Roadmap</em></h1>
+        <p style="font-size:14px;color:#94A3B8;margin-top:6px">Three tracks from analyst to Managing Director — with
+          skills and comp at every level</p>
+      </div>
+      <div class="career-tracks">
+        <div class="track">
+          <div class="track-head">
+            <span class="track-icon">🏦</span>
+            <span class="track-name">Investment Banking</span>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#DC2626">1</div>
+            <div class="step-content">
+              <div class="step-title">Analyst (Yr 1–3)</div>
+              <div class="step-comp">$150K–$250K all-in</div>
+              <div class="step-desc">Financial modeling, pitch decks, 80–100hr weeks</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#EF4444">2</div>
+            <div class="step-content">
+              <div class="step-title">Associate (Yr 4–6)</div>
+              <div class="step-comp">$250K–$400K all-in</div>
+              <div class="step-desc">Lead deal teams, client interaction, manage analysts</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#F87171">3</div>
+            <div class="step-content">
+              <div class="step-title">VP → Director (Yr 7–14)</div>
+              <div class="step-comp">$400K–$1.5M all-in</div>
+              <div class="step-desc">Manage processes, develop client relationships, originate</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#FCA5A5">4</div>
+            <div class="step-content">
+              <div class="step-title">Managing Director (Yr 14+)</div>
+              <div class="step-comp">$1M–$10M+ all-in</div>
+              <div class="step-desc">P&L ownership, franchise-level client relationships</div>
+            </div>
+          </div>
+        </div>
+        <div class="track">
+          <div class="track-head">
+            <span class="track-icon">🔬</span>
+            <span class="track-name">Quantitative Finance</span>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#7C3AED">1</div>
+            <div class="step-content">
+              <div class="step-title">Quant Researcher</div>
+              <div class="step-comp">$200K–$1M+</div>
+              <div class="step-desc">PhD required. Statistical modeling, Python/R, backtesting</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#9D4EDD">2</div>
+            <div class="step-content">
+              <div class="step-title">Quant Developer</div>
+              <div class="step-comp">$200K–$600K</div>
+              <div class="step-desc">C++/Python, low-latency systems, FIX protocol, HFT infra</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#A78BFA">3</div>
+            <div class="step-content">
+              <div class="step-title">ML / Data Scientist</div>
+              <div class="step-comp">$150K–$500K</div>
+              <div class="step-desc">ML, NLP, alternative data, time-series forecasting</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#C4B5FD">4</div>
+            <div class="step-content">
+              <div class="step-title">Quant Trader / PM</div>
+              <div class="step-comp">$300K–$2M+</div>
+              <div class="step-desc">Deploy strategies live. Risk management. Alpha generation.</div>
+            </div>
+          </div>
+        </div>
+        <div class="track">
+          <div class="track-head">
+            <span class="track-icon">💻</span>
+            <span class="track-name">Fintech & Technology</span>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#0891B2">1</div>
+            <div class="step-content">
+              <div class="step-title">Financial Data Engineer</div>
+              <div class="step-comp">$150K–$350K</div>
+              <div class="step-desc">Python, Spark, Kafka, SQL, AWS/GCP, market data pipelines</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#06B6D4">2</div>
+            <div class="step-content">
+              <div class="step-title">Trading Systems Engineer</div>
+              <div class="step-comp">$200K–$500K</div>
+              <div class="step-desc">OMS, execution algos, exchange connectivity, ultra-low latency</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#22D3EE">3</div>
+            <div class="step-content">
+              <div class="step-title">Risk Systems / Blockchain Dev</div>
+              <div class="step-comp">$150K–$400K</div>
+              <div class="step-desc">VaR engines, Monte Carlo, Solidity/Rust, DeFi protocols</div>
+            </div>
+          </div>
+          <div class="track-step">
+            <div class="dot" style="background:#67E8F9">4</div>
+            <div class="step-content">
+              <div class="step-title">Head of Technology / CTO</div>
+              <div class="step-comp">$500K–$3M+</div>
+              <div class="step-desc">Architecture, team leadership, regulatory technology strategy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:0 64px;margin-top:14px">
+        <p
+          style="font-size:11px;color:#64748B;margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase">
+          Essential Certifications</p>
+        <div class="certs">
+          <span class="cert-badge"
+            style="background:rgba(245,158,11,0.15);color:#FCD34D;border-color:rgba(245,158,11,0.3)">CFA — Investment
+            Management</span>
+          <span class="cert-badge"
+            style="background:rgba(220,38,38,0.15);color:#FCA5A5;border-color:rgba(220,38,38,0.3)">FRM — Risk
+            Management</span>
+          <span class="cert-badge"
+            style="background:rgba(124,58,237,0.15);color:#C4B5FD;border-color:rgba(124,58,237,0.3)">CMT — Technical
+            Analysis</span>
+          <span class="cert-badge"
+            style="background:rgba(8,145,178,0.15);color:#67E8F9;border-color:rgba(8,145,178,0.3)">Python for
+            Finance</span>
+          <span class="cert-badge"
+            style="background:rgba(5,150,105,0.15);color:#34D399;border-color:rgba(5,150,105,0.3)">Series 7 / 63 /
+            65</span>
+          <span class="cert-badge"
+            style="background:rgba(59,130,246,0.15);color:#93C5FD;border-color:rgba(59,130,246,0.3)">MBA — Top 20 (IB
+            entry)</span>
+        </div>
+      </div>
     </div>
-    <div class="header">
-      <h1>Investment Strategies<br><em>Matrix</em></h1>
-      <p style="font-size:14px;color:#94A3B8;margin-top:6px">From index funds to algorithmic trading — every approach
-        mapped with its masters</p>
-    </div>
-    <div class="strat-grid">
-      <div class="strat-card" style="--accent:#3B82F6">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3B82F6,#1D4ED8)">
-        </div>
-        <div class="sname">📦 Value Investing</div>
-        <div class="smasters">Buffett · Graham · Munger</div>
-        <div class="sdesc">Buy stocks below intrinsic value. Hold until market corrects. Margin of safety always.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Years–Decades</span>
-          <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low-Medium Risk</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Beginner OK</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#34D399)">
-        </div>
-        <div class="sname">🚀 Growth Investing</div>
-        <div class="smasters">Peter Lynch · Philip Fisher</div>
-        <div class="sdesc">Buy companies with above-average revenue and earnings growth potential. Hunt for tenbaggers.
-        </div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">1–10 Years</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Medium Risk</span>
-          <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">PEG &lt; 1</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366F1,#818CF8)">
-        </div>
-        <div class="sname">📋 Passive / Index</div>
-        <div class="smasters">John Bogle · Vanguard</div>
-        <div class="sdesc">Own the entire market via low-cost index funds. Beat 80%+ of active managers after fees over
-          time.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(99,102,241,0.2);color:#A5B4FC">Long-Term</span>
-          <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low Risk</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Absolute Beginner</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D97706,#F59E0B)">
-        </div>
-        <div class="sname">🌍 Global Macro</div>
-        <div class="smasters">Soros · Dalio · Druckenmiller</div>
-        <div class="sdesc">Directional bets on currencies, rates, economies. Top-down. Leveraged. Can profit from any
-          trend.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(217,119,6,0.2);color:#FBBF24">Days–Years</span>
-          <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Very High Risk</span>
-          <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Advanced</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#DC2626,#EF4444)">
-        </div>
-        <div class="sname">🔀 Long / Short Equity</div>
-        <div class="smasters">Tiger Management · Viking</div>
-        <div class="sdesc">Buy undervalued, short overvalued stocks simultaneously. Profit from the spread. Hedge market
-          risk.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">Weeks–Months</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">High Risk</span>
-          <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Institutional</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#22D3EE)">
-        </div>
-        <div class="sname">⚡ Quantitative / Algo</div>
-        <div class="smasters">Renaissance · Two Sigma · DE Shaw</div>
-        <div class="sdesc">Mathematical models extract statistical patterns. Pure data-driven. Human emotion eliminated.
-        </div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(8,145,178,0.2);color:#67E8F9">Microseconds–Months</span>
-          <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Expert Level</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7C3AED,#9D4EDD)">
-        </div>
-        <div class="sname">🎭 Event-Driven</div>
-        <div class="smasters">Elliott Management · Pershing</div>
-        <div class="sdesc">Merger arbitrage, distressed, activist campaigns. Profit from corporate events and special
-          situations.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(124,58,237,0.2);color:#C4B5FD">Months–Years</span>
-          <span class="stag" style="background:rgba(220,38,38,0.2);color:#FCA5A5">High Risk</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Advanced</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#10B981)">
-        </div>
-        <div class="sname">💰 Dividend Growth</div>
-        <div class="smasters">Dividend Aristocrats · BRK</div>
-        <div class="sdesc">Build reliable income from companies with 10–25+ years of consecutive dividend growth.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Long-Term</span>
-          <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Low-Medium</span>
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Beginner OK</span>
-        </div>
-      </div>
-      <div class="strat-card">
-        <div
-          style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F59E0B,#FBBF24)">
-        </div>
-        <div class="sname">🔄 All-Weather (Dalio)</div>
-        <div class="smasters">Ray Dalio · Bridgewater</div>
-        <div class="sdesc">30% stocks / 40% LT bonds / 15% IT bonds / 7.5% gold / 7.5% commodities. Balanced for any
-          economic regime.</div>
-        <div class="smeta">
-          <span class="stag" style="background:rgba(245,158,11,0.2);color:#FCD34D">Any Cycle</span>
-          <span class="stag" style="background:rgba(5,150,105,0.2);color:#34D399">Low-Medium</span>
-          <span class="stag" style="background:rgba(59,130,246,0.2);color:#93C5FD">Intermediate</span>
-        </div>
-      </div>
-    </div>
-    <div
-      style="margin:14px 64px 0;padding:14px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:12px;display:flex;align-items:center;gap:12px">
-      <span style="font-size:18px">⚡</span>
-      <p style="font-size:11px;color:#94A3B8;line-height:1.5"><strong style="color:#FCD34D">Edge × Leverage × Time =
-          Wealth.</strong> Every great investor found a genuine EDGE, applied it with appropriate LEVERAGE, and gave it
-        TIME to compound. Most failures come from mistaking luck for edge — or impatience that kills compounding before
-        it reaches its power.</p>
-    </div>
-  </div>
 
-  <!-- ══ CARD 8 — CAREER ══ -->
-  <div class="card" id="c8">
-    <div class="band"><span>FINANCE CAREER ROADMAP — THREE TRACKS, REAL COMPENSATION, SKILLS THAT MATTER</span></div>
-    <div class="header">
-      <h1>Finance Career<br><em>Roadmap</em></h1>
-      <p style="font-size:14px;color:#94A3B8;margin-top:6px">Three tracks from analyst to Managing Director — with
-        skills and comp at every level</p>
-    </div>
-    <div class="career-tracks">
-      <div class="track">
-        <div class="track-head">
-          <span class="track-icon">🏦</span>
-          <span class="track-name">Investment Banking</span>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#DC2626">1</div>
-          <div class="step-content">
-            <div class="step-title">Analyst (Yr 1–3)</div>
-            <div class="step-comp">$150K–$250K all-in</div>
-            <div class="step-desc">Financial modeling, pitch decks, 80–100hr weeks</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#EF4444">2</div>
-          <div class="step-content">
-            <div class="step-title">Associate (Yr 4–6)</div>
-            <div class="step-comp">$250K–$400K all-in</div>
-            <div class="step-desc">Lead deal teams, client interaction, manage analysts</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#F87171">3</div>
-          <div class="step-content">
-            <div class="step-title">VP → Director (Yr 7–14)</div>
-            <div class="step-comp">$400K–$1.5M all-in</div>
-            <div class="step-desc">Manage processes, develop client relationships, originate</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#FCA5A5">4</div>
-          <div class="step-content">
-            <div class="step-title">Managing Director (Yr 14+)</div>
-            <div class="step-comp">$1M–$10M+ all-in</div>
-            <div class="step-desc">P&L ownership, franchise-level client relationships</div>
-          </div>
-        </div>
-      </div>
-      <div class="track">
-        <div class="track-head">
-          <span class="track-icon">🔬</span>
-          <span class="track-name">Quantitative Finance</span>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#7C3AED">1</div>
-          <div class="step-content">
-            <div class="step-title">Quant Researcher</div>
-            <div class="step-comp">$200K–$1M+</div>
-            <div class="step-desc">PhD required. Statistical modeling, Python/R, backtesting</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#9D4EDD">2</div>
-          <div class="step-content">
-            <div class="step-title">Quant Developer</div>
-            <div class="step-comp">$200K–$600K</div>
-            <div class="step-desc">C++/Python, low-latency systems, FIX protocol, HFT infra</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#A78BFA">3</div>
-          <div class="step-content">
-            <div class="step-title">ML / Data Scientist</div>
-            <div class="step-comp">$150K–$500K</div>
-            <div class="step-desc">ML, NLP, alternative data, time-series forecasting</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#C4B5FD">4</div>
-          <div class="step-content">
-            <div class="step-title">Quant Trader / PM</div>
-            <div class="step-comp">$300K–$2M+</div>
-            <div class="step-desc">Deploy strategies live. Risk management. Alpha generation.</div>
-          </div>
-        </div>
-      </div>
-      <div class="track">
-        <div class="track-head">
-          <span class="track-icon">💻</span>
-          <span class="track-name">Fintech & Technology</span>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#0891B2">1</div>
-          <div class="step-content">
-            <div class="step-title">Financial Data Engineer</div>
-            <div class="step-comp">$150K–$350K</div>
-            <div class="step-desc">Python, Spark, Kafka, SQL, AWS/GCP, market data pipelines</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#06B6D4">2</div>
-          <div class="step-content">
-            <div class="step-title">Trading Systems Engineer</div>
-            <div class="step-comp">$200K–$500K</div>
-            <div class="step-desc">OMS, execution algos, exchange connectivity, ultra-low latency</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#22D3EE">3</div>
-          <div class="step-content">
-            <div class="step-title">Risk Systems / Blockchain Dev</div>
-            <div class="step-comp">$150K–$400K</div>
-            <div class="step-desc">VaR engines, Monte Carlo, Solidity/Rust, DeFi protocols</div>
-          </div>
-        </div>
-        <div class="track-step">
-          <div class="dot" style="background:#67E8F9">4</div>
-          <div class="step-content">
-            <div class="step-title">Head of Technology / CTO</div>
-            <div class="step-comp">$500K–$3M+</div>
-            <div class="step-desc">Architecture, team leadership, regulatory technology strategy</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="padding:0 64px;margin-top:14px">
-      <p
-        style="font-size:11px;color:#64748B;margin-bottom:8px;font-weight:600;letter-spacing:1px;text-transform:uppercase">
-        Essential Certifications</p>
-      <div class="certs">
-        <span class="cert-badge"
-          style="background:rgba(245,158,11,0.15);color:#FCD34D;border-color:rgba(245,158,11,0.3)">CFA — Investment
-          Management</span>
-        <span class="cert-badge"
-          style="background:rgba(220,38,38,0.15);color:#FCA5A5;border-color:rgba(220,38,38,0.3)">FRM — Risk
-          Management</span>
-        <span class="cert-badge"
-          style="background:rgba(124,58,237,0.15);color:#C4B5FD;border-color:rgba(124,58,237,0.3)">CMT — Technical
-          Analysis</span>
-        <span class="cert-badge"
-          style="background:rgba(8,145,178,0.15);color:#67E8F9;border-color:rgba(8,145,178,0.3)">Python for
-          Finance</span>
-        <span class="cert-badge"
-          style="background:rgba(5,150,105,0.15);color:#34D399;border-color:rgba(5,150,105,0.3)">Series 7 / 63 /
-          65</span>
-        <span class="cert-badge"
-          style="background:rgba(59,130,246,0.15);color:#93C5FD;border-color:rgba(59,130,246,0.3)">MBA — Top 20 (IB
-          entry)</span>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -1938,8 +1982,24 @@
       document.getElementById('c' + n).classList.add('active');
       document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      fitStage();
       window.scrollTo({ top: 64, behavior: 'smooth' });
     }
+
+    function fitStage() {
+      var stage = document.getElementById('stage');
+      var active = document.querySelector('.card.active');
+      if (!active) return;
+      var maxW = Math.min(window.innerWidth - 24, 1080);
+      var scale = maxW / 1080;
+      active.style.transform = 'scale(' + scale + ')';
+      stage.style.height = (900 * scale) + 'px';
+      stage.style.width = maxW + 'px';
+    }
+
+    window.addEventListener('resize', fitStage);
+    window.addEventListener('orientationchange', fitStage);
+    fitStage();
   </script>
 </body>
 
